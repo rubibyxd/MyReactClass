@@ -14,7 +14,7 @@ const App = () => {
 
       <button
         onClick={() => {
-          const NewInputValue = inputValue * 28.53
+          const NewInputValue = (inputValue * 28.53).toFixed(2)
           setInputValue(NewInputValue)
         }}
       >
@@ -27,7 +27,7 @@ const App = () => {
       />
       <button
         onClick={() => {
-          const TWInputValue = inputValue / 28.53
+          const TWInputValue = (inputValue / 28.53).toFixed(2)
           setInputValue(TWInputValue)
         }}
       >
