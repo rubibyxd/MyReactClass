@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
+const App = () => {
+  const [inputValue, setInputValue] = useState('')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h1>美金台幣轉換器</h1>
+      <h2>{inputValue}</h2>
+      <h3>美金</h3>
+      <input
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)}
+      />
+
+      <button
+        onClick={() => {
+          const NewInputValue = inputValue * 28.53
+          setInputValue(NewInputValue)
+        }}
+      >
+        轉換成台幣
+      </button>
+      <h3>台幣</h3>
+      <input
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)}
+      />
+      <button
+        onClick={() => {
+          const TWInputValue = inputValue / 28.53
+          setInputValue(TWInputValue)
+        }}
+      >
+        轉換成美金
+      </button>
+    </>
+  )
 }
 
-export default App;
+export default App
